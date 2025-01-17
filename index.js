@@ -17,6 +17,22 @@ app.use(bodyParser.json({limit:"30mb",extended:true}));
 app.use(bodyParser.urlencoded({limit:"30mb",extended:true}));
 
 
+// const allowedOrigins = ['http://localhost:3000','https://memories-front-eta.vercel.app/']; // Replace with your frontend URL
+// app.use(
+//   cors({
+//     origin: function (origin, callback) {
+//       if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error('Not allowed by CORS'));
+//       }
+//     },
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     credentials: true, // Allows cookies to be sent with cross-origin requests
+//   })
+// );
+
+
 app.use(cors());
 app.use('/posts',postRoutes);
 app.use('/user',userRoutes);
